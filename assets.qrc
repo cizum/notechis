@@ -1,0 +1,31 @@
+<RCC>
+    <qresource prefix="/">
+        <file>components/Text/createElement.js</file>
+        <file>components/Text/TextBasic.qml</file>
+        <file>components/Text/TextLettersAnimated.qml</file>
+        <file>components/Bonus.qml</file>
+        <file>components/BonusElement.qml</file>
+        <file>components/Classement.qml</file>
+        <file>components/GameArea.qml</file>
+        <file>components/KeysControls.qml</file>
+        <file>components/Ligne.qml</file>
+        <file>components/LigneElement.qml</file>
+        <file>components/Mask.qml</file>
+        <file>components/MegaWinnerScreen.qml</file>
+        <file>components/Menu.qml</file>
+        <file>components/PowerElement.qml</file>
+        <file>components/Powers.qml</file>
+        <file>components/Serpent.qml</file>
+        <file>components/Serpents.qml</file>
+        <file>components/SmallExplosion.qml</file>
+        <file>components/TitleScreen.qml</file>
+        <file>images/aec.png</file>
+        <file>images/inversion.png</file>
+        <file>images/lampe.png</file>
+        <file>images/lent.png</file>
+        <file>images/particule.png</file>
+        <file>images/rapide.png</file>
+        <file>scripts/createElement.js</file>
+        <file>main.qml</file>
+    </qresource>
+</RCC>
