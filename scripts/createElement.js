@@ -80,8 +80,9 @@ function createElementProp(name,prop) {
         if (component.status === Component.Ready) {
             sprite = component.createObject(root, prop);
             if (sprite === null) console.log("Error creating object "+name);
-        } else if (component.status === Component.Error)
+        } else if (component.status === Component.Error) {
             console.log("Error loading component:", component.errorString());
+        }
     }
 
     if (component.status === Component.Ready)

@@ -16,3 +16,5 @@ HEADERS += \
 
 RESOURCES += assets.qrc
 
+QMAKE_LFLAGS += -static
+

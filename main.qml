@@ -8,75 +8,84 @@ Window {
     width: 1280
     height: 720
     visible: true
-    maximumHeight: 720
-    maximumWidth: 1280
-    minimumHeight: 720
-    minimumWidth: 1280
-    flags: Qt.WindowCloseButtonHint
     color: "#101010"
 
-    GameArea {
-        id: gameArea
+    Item {
+        id: container
 
-        anchors.fill: parent
-        anchors.leftMargin: 300
-        anchors.topMargin: 5
-        anchors.bottomMargin: 5
-        anchors.rightMargin: 5
-        clip: true
-        visible: false
-
-        onPointsUpdate: {
-            classement.points = points
-            classement.organize()
+        width: 1280
+        height: 720
+        anchors.centerIn: parent
+        transform: Scale {
+            xScale: root.width / container.width
+            yScale: root.height / container.height
+            origin.x: container.width / 2
+            origin.y: container.height / 2
         }
-        onTerminateGame: {
-            megaWinnerScreen.winName = name
-            megaWinnerScreen.opacity = 1
+
+        GameArea {
+            id: gameArea
+
+            anchors.fill: parent
+            anchors.leftMargin: 300
+            anchors.topMargin: 5
+            anchors.bottomMargin: 5
+            anchors.rightMargin: 5
+            clip: true
+            visible: false
+
+            onPointsUpdate: {
+                classement.points = points
+                classement.organize()
+            }
+            onTerminateGame: {
+                megaWinnerScreen.winName = name
+                megaWinnerScreen.opacity = 1
+            }
         }
-    }
 
-    Rectangle {
-        id: gameBorder
+        Rectangle {
+            id: gameBorder
 
-        anchors.fill: gameArea
-        color: "transparent"
-        border.color: "#909090"
-        border.width: 2
-        visible: gameArea.visible
-    }
-
-    Classement {
-        id: classement
-
-        width: 300
-        height: parent.height
-        visible: false
-    }
-
-    MegaWinnerScreen {
-        id: megaWinnerScreen
-
-        anchors.fill: gameArea
-        onAskForRestart: menu.opacity = 1
-    }
-
-    Menu {
-        id: menu
-
-        onStart: {
-            classement.players = players
-            gameArea.initializeGame(players)
-            menu.opacity = 0
-            gameArea.visible = true
-            classement.visible = true
+            anchors.fill: gameArea
+            color: "transparent"
+            border.color: "#909090"
+            border.width: 2
+            visible: gameArea.visible
         }
-    }
 
-    TitleScreen {
-        id: titleScreen
+        Classement {
+            id: classement
 
-        onEndTitle: menu.opacity = 1
+            width: 300
+            height: parent.height
+            visible: false
+        }
+
+        MegaWinnerScreen {
+            id: megaWinnerScreen
+
+            anchors.fill: gameArea
+            onAskForRestart: menu.opacity = 1
+        }
+
+        Menu {
+            id: menu
+
+            onStart: {
+                classement.players = players
+                gameArea.initializeGame(players)
+                menu.opacity = 0
+                gameArea.visible = true
+                classement.visible = true
+            }
+        }
+
+        TitleScreen {
+            id: titleScreen
+
+            onEndTitle: menu.opacity = 1
+        }
     }
 }
 

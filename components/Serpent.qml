@@ -10,7 +10,7 @@ Item {
 
     property color usageColor: aec ? clr : mainColor
     property color clr: clrs[color_id]
-    property color mainColor:"#0050ff"
+    property color mainColor: "#0050ff"
     property var rgba: 0
     property var usageRgba: aec ? aecColor : rgba
     property var aecColor: clrs[color_id]

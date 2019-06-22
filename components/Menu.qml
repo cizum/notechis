@@ -156,7 +156,7 @@ Rectangle {
     function createPlayers(n) {
         players = []
         currentPlayers.clear()
-        var couleurs = [false,false,false,false,false,false,false]
+        var couleurs = [false, false, false, false, false, false, false]
         var c = 0
         for (var i = 0; i < n; i++){
             c = Math.floor(Math.random() * playerColorModel.length)

@@ -8,7 +8,7 @@ Item {
     property var points: []
 
     Text {
-        text: "Objectif :  " + (root.players.length - 1) * 10 +  " ou plus"
+        text: "Objectif : " + (root.players.length - 1) * 10 +  " ou plus"
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottom: scoreColumn.top
         anchors.bottomMargin: 30
@@ -46,7 +46,7 @@ Item {
                         text: score
                         color: "black"
                         font.bold: true
-                        font.pixelSize: 24
+                        font.pixelSize: 22
                     }
                 }
 
